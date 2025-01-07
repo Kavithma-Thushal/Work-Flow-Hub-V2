@@ -6,10 +6,8 @@ both company administrators and employees, providing tailored access and feature
 
 ## 🛠️ Tech Stack
 
-✅ **Laravel**<br/>
-✅ **MySQL**<br/>
-✅ **Laravel Passport**<br/>
-✅ **Laravel Permission**<br/>
+✅ **Login With Breeze**<br/>
+✅ **Register With Breeze**<br/>
 
 ## 🚀 Features
 
