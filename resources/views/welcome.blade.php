@@ -26,7 +26,7 @@
     @endif
 </header>
 
-<main class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+<main class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
     <div class="text-center">
         <h1>Welcome to Work Flow Hub!</h1>
     </div>
