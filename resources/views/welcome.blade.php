@@ -8,7 +8,7 @@
 </head>
 
 <body class="bg-light">
-<header>
+<header class="p-2 border-bottom position-fixed top-0 w-100">
     @if (Route::has('login'))
         <nav class="d-flex">
             @auth
@@ -29,8 +29,16 @@
 <main class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
     <div class="text-center">
         <h1>Welcome to Work Flow Hub!</h1>
+        <p class="lead text-muted mt-3">Streamline your tasks with ease and efficiency</p>
+        <a href="#" class="btn btn-primary btn-lg mt-4 px-4 shadow-sm">Get Started</a>
     </div>
 </main>
 
+<footer class="p-3 border-top position-fixed bottom-0 w-100">
+    <div class="container">
+        <p class="text-center mb-0">&copy; 2024 All Rights Reserved | Designed by
+            <a href="https://webmotech.com" class="text-decoration-none" target="_blank">Webmotech</a></p>
+    </div>
+</footer>
 </body>
 </html>
