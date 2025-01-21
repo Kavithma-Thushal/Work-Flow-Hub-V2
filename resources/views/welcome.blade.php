@@ -30,7 +30,7 @@
     <div class="text-center">
         <h1>Welcome to Work Flow Hub!</h1>
         <p class="lead text-muted mt-3">Streamline your tasks with ease and efficiency</p>
-        <a href="{{ route('register') }}" class="btn btn-primary btn-lg mt-4 px-4 shadow-sm">Get Started</a>
+        <a href="{{ route('login') }}" class="btn btn-primary btn-lg mt-4 px-4 shadow-sm">Get Started</a>
     </div>
 </main>
 
