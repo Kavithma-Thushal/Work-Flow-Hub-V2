@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::prefix('employee')->group(function () {
+    Route::get('/view', [EmployeeController::class, 'view'])->name('employee.view');
+    Route::post('/store', [EmployeeController::class, 'store']);
+    Route::patch('/update/{id}', [EmployeeController::class, 'update']);
+    Route::delete('/delete/{id}', [EmployeeController::class, 'delete']);
+    Route::get('/getById/{id}', [EmployeeController::class, 'getById']);
+    Route::get('/getAll', [EmployeeController::class, 'getAll']);
+});
+
+require __DIR__ . '/auth.php';
