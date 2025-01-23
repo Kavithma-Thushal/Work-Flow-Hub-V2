@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('employee')->group(function () {
+Route::middleware('auth')->prefix('employee')->group(function () {
     Route::get('/view', [EmployeeController::class, 'view'])->name('employee.view');
     Route::post('/store', [EmployeeController::class, 'store']);
     Route::patch('/update/{id}', [EmployeeController::class, 'update']);
