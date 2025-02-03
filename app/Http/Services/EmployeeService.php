@@ -5,6 +5,7 @@ namespace App\Http\Services;
 use Exception;
 use App\Enums\HttpStatus;
 use App\Repositories\Employee\EmployeeRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -22,6 +23,7 @@ class EmployeeService
         DB::beginTransaction();
         try {
             $employee = $this->employeeRepositoryInterface->store([
+                'user_id' => auth()->id(),
                 'name' => $data['name'],
                 'address' => $data['address'],
                 'salary' => $data['salary'],
@@ -71,7 +73,8 @@ class EmployeeService
 
     public function getById(int $id)
     {
-        $employee = $this->employeeRepositoryInterface->getById($id);
+        $userId = Auth::id();
+        $employee = $this->employeeRepositoryInterface->getByIdAndUserId($id, $userId);
 
         if (!$employee) {
             throw new HttpException(HttpStatus::NOT_FOUND, 'Employee not found');
@@ -82,6 +85,6 @@ class EmployeeService
 
     public function getAll()
     {
-        return $this->employeeRepositoryInterface->getAll();
+        return $this->employeeRepositoryInterface->getByUserId(Auth::id());
     }
 }
